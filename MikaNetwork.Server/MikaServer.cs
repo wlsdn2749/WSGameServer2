@@ -34,7 +34,7 @@ public class MikaServer : IDisposable
     }
     public MikaServer(MikaServerOptions options)
     {
-        _acceptor = new MikaAcceptor(options.AcceptorOpt);
+        _acceptor = new MikaAcceptor(options.AcceptorOpt!);
         _acceptor.Accepted += OnAccepted;
         
     }

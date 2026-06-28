@@ -1,9 +1,8 @@
 using MikaNetwork.Core.Interfaces;
 using MikaProtocol;
-using MikaNetwork.Core.Network;
-using MikaDummyServer.User;
+using WSGameServer.User;
 
-namespace MikaDummyServer.Network;
+namespace WSGameServer.Network;
 
 public static class ClientPacketHandler
 {

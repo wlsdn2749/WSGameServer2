@@ -1,6 +1,6 @@
 using MikaUtils;
 using MikaNetwork.Server;
-using MikaDummyServer.User;
+using WSGameServer.User;
 
 namespace MikaDummyServer.Network;
 
@@ -13,7 +13,8 @@ public class NetworkManager : Singleton<NetworkManager>
     {
         _server.PacketReceived += (session, data) =>
         {
-            _packetManager.OnRecvPacket(session, data);
+            _packetManager.OnRecvPacket(session, data, LogicExecutor.Instance.Post);
+            
             return ValueTask.CompletedTask;
         };
 

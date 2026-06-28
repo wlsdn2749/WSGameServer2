@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 using MikaNetwork.Core.Interfaces;
 using MikaUtils;
 
-namespace MikaDummyServer.User;
+namespace WSGameServer.User;
 
 /// <summary>
 /// 로그인한 User들을 SessionId 단위로 보관/조회/정리하는 게임 로직 레이어 매니저.
@@ -17,9 +17,9 @@ public sealed class UserManager : Singleton<UserManager>
     /// <summary>
     /// 로그인 성공 시 User를 생성·등록한다. 이미 같은 SessionId로 등록돼 있으면 null.
     /// </summary>
-    public User? CreateUser(ISession session, string id)
+    public User? CreateUser(ISession session, string name)
     {
-        var user = new User(session, id);
+        var user = new User(session, name);
         return _users.TryAdd(user.SessionId, user) ? user : null;
     }
 

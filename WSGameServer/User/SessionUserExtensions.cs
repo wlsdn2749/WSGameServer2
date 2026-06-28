@@ -1,6 +1,6 @@
 using MikaNetwork.Core.Interfaces;
 
-namespace MikaDummyServer.User;
+namespace WSGameServer.User;
 
 /// <summary>
 /// 핸들러로 <see cref="ISession"/>만 들어왔을 때 SessionId로 User를 조회하는 헬퍼.

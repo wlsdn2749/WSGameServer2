@@ -46,7 +46,7 @@ public class MikaAcceptor : IDisposable
     {
         while (true)
         {
-            var client = await _listenSocket?.AcceptAsync();
+            var client = await _listenSocket!.AcceptAsync();
             
             var session = MikaSessionFactory.Create(client);
             
